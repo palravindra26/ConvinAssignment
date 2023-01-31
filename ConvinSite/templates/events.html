@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Events Page</title>
+</head>
+<body>
+  Welcome to the Events page. Here you can view your Google Calendar events.
+<br>
+  <br>
+   Here are your Calendar events :
+  <ol>
+{% for event in events %}
+<li>{{ event.summary }}
+    {% if event.start.dateTime %}
+    on {{event.start.dateTime}}
+    {% endif %}
+
+</li>
+{% endfor %}
+  </ol>
+<br>
+<form action="{% url 'index' %}" method="post">
+    {% csrf_token %}
+    <input  class="label theme-bg2 text-white f-12" type="submit" value="Back to home page" height="4" width="4">
+</form>
+
+</body>
+</html>

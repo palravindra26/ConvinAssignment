@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Index Page</title>
+</head>
+<body>
+  Welcome to the home page.
+<br>
+<br>
+  Click the button to view your events from the Google Calendar:
+<br>
+<br>
+<form action="{% url 'GoogleCalendarInitView' %}" method="post">
+    {% csrf_token %}
+    <input  class="label theme-bg2 text-white f-12" type="submit" value="Google Calendar" height="4" width="4">
+</form>
+
+
+</body>
+</html>
